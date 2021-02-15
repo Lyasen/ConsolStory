@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Consol'Story - Inscription</title>
+    <!--    Tags meta   -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Formulaire d'inscription à Consol'Story">
+    <!--    Links   -->
+    <link rel="stylesheet" type="text/css" media="screen" th:href="registration.css">
+    <link rel="shortcut icon" href="../../static/logo/purple_logo.png" type="image/x-icon">
+</head>
+
+<body>
+<header>
+    <h1>Consol'Story</h1>
+    <h2>Histoire de la console de jeux</h2>
+    <h2>S'inscrire</h2>
+</header>
+
+<main>
+    <form action="#" th:action="@{/registration}" th:object="${registration}" method="post">
+        <fieldset>
+            <legend>Vos informations</legend>
+            <div>
+                <label for="firstName">Votre prénom</label>
+                <input type="text" name="firstName" id="firstName" th:field="*{firstName}" autofocus required>
+                <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+            </div>
+            <div>
+                <label for="lastName">Votre nom</label>
+                <input type="text" name="lastName" id="lastName" th:field="*{lastName}" required>
+                <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+            </div>
+            <div>
+                <label for="username">Votre pseudo</label>
+                <input type="text" name="username" id="username" th:field="*{username}" required>
+                <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+            </div>
+            <div>
+                <label for="email">Votre adresse email</label>
+                <input type="email" name="email" id="email" th:field="*{email}" required>
+                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+            </div>
+            <div>
+                <label for="password">Votre mot de passe sécurisé</label>
+                <input type="password" name="password" id="password" th:field="*{password}" required>
+                <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+            </div>
+            <div>
+                <label for="confirmed">Confirmez votre mot de passe</label>
+                <input type="password" name="confirmed" id="confirmed" th:field="*{confirmed}" required>
+                <span th:if="${#fields.hasErrors('confirmed')}" th:errors="*{confirmed}"></span>
+            </div>
+            <button type="reset" value="Reset">Annulez</button>
+            <button type="submit" value="Submit">Envoyez</button>
+        </fieldset>
+    </form>
+</main>
+
+<footer>
+    <p>
+        &copy; 2021 - Lyasen - Développeur Web Java - tous droits réservés
+    </p>
+
+    <h4>Mes sites recommandés :</h4>
+    <ul>
+        <li>ActuGaming.net</li>
+        <li>GameBlog</li>
+        <li>Gamekult</li>
+        <li>JeuxActu</li>
+        <li>jeuxvideo.com</li>
+        <li>YouTube</li>
+    </ul>
+
+    <p>
+        <a th:href="@{mailto:consolStory@protonmail.com}">Nous contacter</a>
+    </p>
+</footer>
+</body>
+
+</html>
