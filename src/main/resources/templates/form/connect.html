@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Connexion à Consol'Story</title>
+    <!--    Tags meta   -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <!--    Links   -->
+    <link rel="stylesheet" type="text/css" media="screen" href="connect.css">
+    <link rel="shortcut icon" href="../../static/logo/purple_logo.png" type="image/x-icon">
+</head>
+
+<body>
+<header>
+    <h1>Consol'Story</h1>
+</header>
+
+<main>
+    <h3>Se connecter!</h3>
+        <form th:action="@{/template_main}" method="get">
+            <label for="email" autofocus>Votre email</label>
+            <input type="text" name="email" id="email" placeholder="Entrez votre email" required>
+            <hr>
+            <label for="password">Votre mot de passe</label>
+            <input class="form-control" type="password" name="password" id="password" required>
+            <hr>
+            <button type="reset">Annulez</button>
+            <button type="submit">Connectez</button>
+        </form>
+</main>
+
+<footer>
+    <p>
+        &copy; 2021 - Lyasen - Développeur Web Java - tous droits réservés
+    </p>
+
+    <h4>Mes sites recommandés :</h4>
+    <ul>
+        <li>ActuGaming.net</li>
+        <li>GameBlog</li>
+        <li>Gamekult</li>
+        <li>JeuxActu</li>
+        <li>jeuxvideo.com</li>
+        <li>YouTube</li>
+    </ul>
+
+    <p>
+        <a th:href="@{mailto:consolStory@protonmail.com}">Nous contacter</a>
+    </p>
+</footer>
+</body>
+
+</html>
